@@ -5,5 +5,21 @@ export class Satellite {
     operational: boolean;
     launchDate: string;
 
-    constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean) {}
+    shouldShowWarning: boolean;
+    
+
+    constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean) {
+        this.name= name;
+        this.type= type;
+        this.launchDate= launchDate;
+        this.orbitType= orbitType;
+        this.operational= operational;
+    }
+    ngOnInit() {}
+
+    debrisWarning(type: string) {
+        if (this.type.toLowerCase === 'space debris') {
+            this.shouldShowWarning = true;
+        } else {this.shouldShowWarning = false}
+    }
 }
