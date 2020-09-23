@@ -16,11 +16,10 @@ export class Satellite {
     }
     ngOnInit() {}
 
-    debrisWarning(type: string) {
-        let shouldShowWarning: boolean = false;
-        if (this.type === 'Space Debris') {
-            shouldShowWarning = true;
-        } else {shouldShowWarning = false}
-        return shouldShowWarning;
+    shouldShowWarning() {
+        
+        if (this.type.toLowerCase() === 'space debris') {
+            return true;
+        } else return false;
     }
 }
